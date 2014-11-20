@@ -49,7 +49,7 @@ describe 'zaqar' do
     end
     let(:params) { default_params }
 
-    it { should contain_package('openstack-zaqar')}
+    it { expect contain_package('openstack-zaqar')}
   end
 
 end
