@@ -1,13 +1,13 @@
-glance
+zaqar
 =======
 
 4.0.0 - 2014.1.0 - Icehouse
 
 #### Table of Contents
 
-1. [Overview - What is the glance module?](#overview)
+1. [Overview - What is the zaqar module?](#overview)
 2. [Module Description - What does the module do?](#module-description)
-3. [Setup - The basics of getting started with glance](#setup)
+3. [Setup - The basics of getting started with zaqar](#setup)
 4. [Implementation - An under-the-hood peek at what the module is doing](#implementation)
 5. [Limitations - OS compatibility, etc.](#limitations)
 6. [Development - Guide for contributing to the module](#development)
@@ -17,12 +17,12 @@ glance
 Overview
 --------
 
-The glance module is a part of [Stackforge](https://github.com/stackfoge), an effort by the Openstack infrastructure team to provide continuous integration testing and code review for Openstack and Openstack community projects not part of the core software.  The module its self is used to flexibly configure and manage the image service for Openstack.
+The zaqar module is ???
 
 Module Description
 ------------------
 
-The glance module is a thorough attempt to make Puppet capable of managing the entirety of glance.  This includes manifests to provision such things as keystone endpoints, RPC configurations specific to glance, and database connections.  Types are shipped as part of the glance module to assist in manipulation of configuration files.
+The zaqar module is a thorough attempt to make Puppet capable of managing the entirety of openstack-zaqar.  This includes manifests to provision such things as ???
 
 This module is tested in combination with other modules needed to build and leverage an entire Openstack software stack.  These modules can be found, all pulled together in the [openstack module](https://github.com/stackfoge/puppet-openstack).
 
