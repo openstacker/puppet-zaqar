@@ -4,11 +4,7 @@
 # == parameters
 #   * package_ensure - ensure state for package.
 #
-class zaqar(
-  $package_ensure = 'present'
-) {
-
-  include zaqar::params
+class zaqar {
 
   file { '/etc/zaqar/':
     ensure  => directory,
