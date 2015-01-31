@@ -4,7 +4,10 @@
 spec/fixtures/modules/*
 spec/fixtures/manifests/site.pp
 Gemfile.lock
+Puppetfile.lock
 .vendor
 .bundle/
 vendor/
 .vagrant
+.librarian
+.tmp

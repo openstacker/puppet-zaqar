@@ -17,11 +17,11 @@ end
 Vagrant.configure(2) do |config|
   config.vm.box = box
   config.vm.hostname = hostname + '.' + domain
-
+  config.librarian_puppet.puppetfile_dir = "puppet/librarian-puppet"
   config.vm.provision :puppet do |puppet|
     puppet.manifests_path = "puppet/manifests"
     puppet.manifest_file = "site.pp"
-    puppet.module_path = "puppet/modules"
-    puppet.options = "--verbose --debug"
+    puppet.module_path = ["puppet/modules", "puppet/librarian-puppet/modules"]
+    puppet.options = "--verbose"
   end
 end

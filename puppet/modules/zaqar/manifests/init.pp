@@ -6,6 +6,11 @@
 #
 class zaqar {
 
+  include zaqar::repo
+  include mongodb::server
+
+  Class['zaqar::repo'] -> Class['mongodb::server']
+
   user { 'zaqar-user':
     name   => 'zaqar',
     groups => 'root',
