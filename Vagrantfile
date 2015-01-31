@@ -5,18 +5,23 @@
 # configures the configuration version (we support older styles for
 # backwards compatibility). Please don't change it unless you know what
 # you're doing.
-Vagrant.configure(2) do |config|
-  # The most common configuration options are documented and commented below.
-  # For a complete reference, please see the online documentation at
-  # https://docs.vagrantup.com.
+box      = 'centos-65-x64-virtualbox-puppet'
+hostname = 'zaqar-test'
+domain   = 'example.com'
+ram      = '512'
 
-  # Every Vagrant development environment requires a box. You can search for
-  # boxes at https://atlas.hashicorp.com/search.
-  config.vm.box = "centos-65-x64-virtualbox-puppet"
+Vagrant::Config.run do |config|
+  config.vm.customize [ 'modifyvm', :id, '--name', hostname, '--memory', ram ]
+end
+
+Vagrant.configure(2) do |config|
+  config.vm.box = box
+  config.vm.hostname = hostname + '.' + domain
 
   config.vm.provision :puppet do |puppet|
-    puppet.manifest_file = "init.pp"
-    puppet.working_directory = "/tmp/vagrant-puppet-3"
-    puppet.options = "--verbose"
+    puppet.manifests_path = "puppet/manifests"
+    puppet.manifest_file = "site.pp"
+    puppet.module_path = "puppet/modules"
+    puppet.options = "--verbose --debug"
   end
 end
